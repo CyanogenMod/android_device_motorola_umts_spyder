@@ -83,7 +83,7 @@ rm -rf $REPACK/ota/recovery
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Copy libvoicesearch as it's getting messed up in the build
-cp -f $ANDROID_BUILD_TOP/device/motorola/spyder/prebuilt/lib/libvoicesearch.so $REPACK/ota/system/lib/libvoicesearch.so
+cp -f $ANDROID_BUILD_TOP/device/motorola/umts_spyder/prebuilt/lib/libvoicesearch.so $REPACK/ota/system/lib/libvoicesearch.so
 
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.cm\.version/s/^.*=//p' $REPACK/ota/system/build.prop`

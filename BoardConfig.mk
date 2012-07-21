@@ -8,7 +8,7 @@ BOARD_OVERRIDE_FB0_WIDTH := 540
 BOARD_OVERRIDE_FB0_HEIGHT := 960
 
 # inherit from the proprietary version
--include vendor/motorola/spyder/BoardConfigVendor.mk
+-include vendor/motorola/umts_spyder/BoardConfigVendor.mk
 
 
 # Processor
@@ -16,7 +16,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := omap4
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_BOOTLOADER_BOARD_NAME := spyder
+TARGET_BOOTLOADER_BOARD_NAME := umts_spyder
 TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
@@ -34,7 +34,7 @@ BOARD_PAGE_SIZE := 0x4096
 # Kernel Build
 TARGET_KERNEL_SOURCE := kernel/motorola/omap4_xt912
 TARGET_KERNEL_CONFIG := mapphone_defconfig
-TARGET_PREBUILT_KERNEL := device/motorola/spyder/kernel
+TARGET_PREBUILT_KERNEL := device/motorola/umts_spyder/kernel
 
 KERNEL_EXTERNAL_MODULES:
 	make -C kernel/motorola/omap4_xt912/external/wlan/mac80211/compat_wl12xx KERNEL_DIR=$(KERNEL_OUT) KLIB=$(KERNEL_OUT) KLIB_BUILD=$(KERNEL_OUT) ARCH=arm CROSS_COMPILE="arm-eabi-"
@@ -88,12 +88,12 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 # Recovery
 BUILD_BOOTMENU_STANDALONE := true
 BOARD_HAS_LOCKED_BOOTLOADER := true
-TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/spyder/recovery-kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := device/motorola/umts_spyder/recovery-kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 BOARD_ALWAYS_INSECURE := true
 BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_MKE2FS := device/motorola/spyder/releaseutils/mke2fs
+BOARD_MKE2FS := device/motorola/umts_spyder/releaseutils/mke2fs
 BOARD_NONSAFE_SYSTEM_DEVICE := /dev/block/mmcblk1p20
 BOARD_HAS_SDCARD_INTERNAL := true
 #BOARD_HAS_SDEXT := false
@@ -110,7 +110,7 @@ BOARD_SYSTEM_FILESYSTEM := ext3
 
 
 # Graphics
-BOARD_EGL_CFG := device/motorola/spyder/prebuilt/etc/egl.cfg
+BOARD_EGL_CFG := device/motorola/umts_spyder/prebuilt/etc/egl.cfg
 USE_OPENGL_RENDERER := true
 COMMON_GLOBAL_CFLAGS += -DSURFACEFLINGER_FORCE_SCREEN_RELEASE
 
@@ -143,9 +143,9 @@ endif
 
 # OTA Packaging
 TARGET_PROVIDES_RELEASETOOLS := true
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/motorola/spyder/releasetools/spyder_ota_from_target_files
-TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/motorola/spyder/releasetools/spyder_img_from_target_files
-TARGET_CUSTOM_RELEASETOOL := ./device/motorola/spyder/releasetools/squisher
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/motorola/umts_spyder/releasetools/umts_spyder_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := device/motorola/umts_spyder/releasetools/umts_spyder_img_from_target_files
+TARGET_CUSTOM_RELEASETOOL := ./device/motorola/umts_spyder/releasetools/squisher
 
 # CodeAurora Optimizations: msm8960: Improve performance of memmove, bcopy, and memmove_words
 # added by twa_priv

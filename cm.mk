@@ -1,33 +1,30 @@
 # Inherit device configuration for VZW Droid RAZR.
-$(call inherit-product, device/motorola/spyder/device_spyder.mk)
+$(call inherit-product, device/motorola/umts_spyder/device_umts_spyder.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit some common CM stuff.
-#$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/cm/config/gsm.mk)
 
 #
 # Setup device specific product configuration.
 #
-PRODUCT_NAME := cm_spyder
-PRODUCT_BRAND := verizon
+PRODUCT_NAME := cm_umts_spyder
+PRODUCT_BRAND := RTGB
 PRODUCT_DEVICE := spyder
-PRODUCT_DEVICE_PREFIX := cdma
-PRODUCT_MODEL := XT912
-PRODUCT_MANUFACTURER := Motorola
+PRODUCT_DEVICE_PREFIX := umts
+PRODUCT_MODEL := XT910
+PRODUCT_MANUFACTURER := motorola
 PRODUCT_SFX := vzw
 ANDROID_VERSION := 4.0.4_r1.2
-#MOTOROLA_BUILD_ID := 6.7.1-68_DHD-15_M4-16
+#MOTOROLA_BUILD_ID := 6.7.6-226_SPU-DE_TA-2
 MOTOROLA_BUILD_ID := IMM76D
-MOTOROLA_SOFTWARE_VERSION := 6.14.84
+MOTOROLA_SOFTWARE_VERSION := 6.76.226.3
 DEVELOPER_NAME := dhacker29
 DEVELOPER_HOST := rombot.droidhive.com
 DEVELOPMENT_STAGE := Beta
 TARGET_BOOTANIMATION_NAME := vertical-540x960
-
-# Release name and versioning
-PRODUCT_RELEASE_NAME := DROID RAZR
 
 UTC_DATE := $(shell date +%s)
 DATE := $(shell date +%Y%m%d)
