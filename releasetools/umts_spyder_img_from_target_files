@@ -47,7 +47,7 @@ import zipfile
 if not hasattr(os, "SEEK_SET"):
   os.SEEK_SET = 0
 
-import spyder_common as common
+import umts_spyder_common as common
 
 OPTIONS = common.OPTIONS
 

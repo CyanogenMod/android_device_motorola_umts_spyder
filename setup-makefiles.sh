@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE=spyder
+DEVICE=umts_spyder
 
 mkdir -p ../../../vendor/motorola/$DEVICE
 

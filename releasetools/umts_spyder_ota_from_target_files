@@ -85,8 +85,8 @@ try:
 except ImportError:
   from sha import sha as sha1
 
-import spyder_common as common
-import spyder_edify_generator as edify_generator
+import umts_spyder_common as common
+import umts_spyder_edify_generator as edify_generator
 
 OPTIONS = common.OPTIONS
 OPTIONS.package_key = None

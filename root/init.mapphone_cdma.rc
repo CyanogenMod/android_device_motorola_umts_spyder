@@ -11,6 +11,7 @@ on early-init
     symlink /mnt/sdcard /sdcard
 
 on init
+    mkdir /mnt/external1 0000 system system
 
     exec /sbin/fixboot.sh
 
@@ -189,7 +190,6 @@ on post-fs-data
     mkdir /data/misc/wifi/firmware 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     # create moto specific dirs for factory
-    mkdir /data/local/dbvc 0770 mot_tcmd shell
     mkdir /data/dalvik-cache 0771 system system
     mkdir /cache/dalvik-cache 0771 system system
     mkdir /data/local/12m 0771 mot_tcmd shell
@@ -887,10 +887,12 @@ service dund_dialup /system/bin/dund --listen --channel=6 --nodetach --dialup
     disabled
     oneshot
 on property:dev.bootcomplete=1
-    start loadpreinstalls
-service cdromversion /system/bin/logwrapper /system/bin/mount_cdrom.sh /dev/block/cdrom
-    class core
-    oneshot
+#    start loadpreinstalls
+#service cdromversion /system/bin/logwrapper /system/bin/mount_cdrom.sh /dev/block/cdrom
+#    class core
+#    oneshot
+
+
 # Backup/Restore Feature
 on property:mot.backup_restore.status="Finished"
     start zygote
@@ -931,12 +933,12 @@ on property:persist.factory.allow_adb=0
 service vpnclientpm /system/bin/vpnclientpm
     class main
     user root
-service loadpreinstalls /system/bin/logwrapper /system/bin/loadpreinstalls.sh
-    class main
-    user system
-    group system
-    disabled
-    oneshot
+#service loadpreinstalls /system/bin/logwrapper /system/bin/loadpreinstalls.sh
+#    class main
+#    user system
+#    group system
+#    disabled
+#    oneshot
 #IKCBS-229 start RescueStarter for MobileRescue
 service RescueStarter /system/bin/RescueStarter
     user graphics

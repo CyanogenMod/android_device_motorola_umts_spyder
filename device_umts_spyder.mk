@@ -70,10 +70,10 @@ PRODUCT_PACKAGES += \
 
 # Release utilities
 PRODUCT_PACKAGES += \
-    spyder_releaseutils-check_kernel \
-    spyder_releaseutils-finalize_release \
-    spyder_releaseutils-mke2fs \
-    spyder_releaseutils-tune2fs
+    umts_spyder_releaseutils-check_kernel \
+    umts_spyder_releaseutils-finalize_release \
+    umts_spyder_releaseutils-mke2fs \
+    umts_spyder_releaseutils-tune2fs
 
 PRODUCT_PACKAGES += \
     camera_test \
@@ -97,8 +97,8 @@ PRODUCT_COPY_FILES += \
 
 # Rootfs files
 PRODUCT_COPY_FILES += \
-    out/target/product/spyder/root/init:system/etc/rootfs/init \
-    out/target/product/spyder/root/sbin/adbd:system/etc/rootfs/sbin/adbd \
+    out/target/product/umts_spyder/root/init:system/etc/rootfs/init \
+    out/target/product/umts_spyder/root/sbin/adbd:system/etc/rootfs/sbin/adbd \
     device/motorola/umts_spyder/root/default.prop:system/etc/rootfs/default.prop \
     device/motorola/umts_spyder/root/init.rc:system/etc/rootfs/init.rc \
     device/motorola/umts_spyder/root/init.mapphone_cdma.rc:system/etc/rootfs/init.mapphone_cdma.rc \

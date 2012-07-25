@@ -11,6 +11,8 @@ on early-init
     symlink /mnt/sdcard /sdcard
 
 on init
+    mkdir /mnt/external1 0000 system system
+
     exec /sbin/fixboot.sh
 
     export ANDROID_CACHE /cache
@@ -184,7 +186,6 @@ on post-fs-data
     mkdir /data/misc/wifi/firmware 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     # create moto specific dirs for factory
-    mkdir /data/local/dbvc 0770 mot_tcmd shell
     mkdir /data/local/12m 0771 mot_tcmd shell
     mkdir /data/local/12m/batch 0771 mot_tcmd shell
     mkdir /data/comm_drv 0770 radio radio
