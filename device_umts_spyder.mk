@@ -95,7 +95,9 @@ PRODUCT_COPY_FILES += \
     device/motorola/umts_spyder/prebuilt/lib/libwtnativetask.so:system/lib/libwtnativetask.so \
 
 # SIM apk
-PRODUCT_PACKAGES += EapSimAkaService
+PRODUCT_PACKAGES += \
+    EapSimAkaService \
+    com.motorola.android.telephony
 
 # Rootfs files
 PRODUCT_COPY_FILES += \
