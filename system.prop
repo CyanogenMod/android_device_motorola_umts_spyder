@@ -6,7 +6,7 @@ ro.sf.lcd_density=240
 
 # directory assistance number
 ro.mot.ril.danlist=611,*611,#611
-persist.ril.ecclist=911,*911,#911
+#persist.ril.ecclist=911,*911,#911
 
 #CDMA-RIL modem mode;2 stands for UMTS
 persist.ril.modem.mode =2
@@ -149,6 +149,7 @@ ro.telephony.gsm-routes-us-smsc = 0
 # END Motorola, xwg843, 29-Jul-2011, IKSTABLE6-3962
 # END  Motorola, qmfd78, 14-Jul-2010, IKMAIN-884
 
+
 # BEGIN Motorola, a22600 qmfd78, 16-Jul-2010, IKDROIDPRO-423
 # For north american cdma operators, this flag should be 1.
 # It enables number mangling when nbpcd (plus code dialing) is not supported.
@@ -233,7 +234,7 @@ persist.dbg.kwdt.report=0
 ro.hdcp.support = 2
 
 # Fast dormancy support
-ro.mot.ds.fastdormancy.disable=true
+ro.mot.ds.fastdormancy.disable=false
 
 #turn off Event Report
 persist.ril.event.report=0
@@ -312,7 +313,7 @@ ro.mot.dpmext=true
 ro.com.google.clientid=android-motorola
 ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
 ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
-ro.build.version.full=ICS_Version.4.0.4_r2.1.XT910.Retail.en.
+ro.build.version.full=ICS_Version.4.0.4_r2.1.XT910.Retail.en.EU
 ro.mot.hidden_keyboards=evfwd
 ro.com.google.locationfeatures=1
 ro.setupwizard.enable_bypass=1
@@ -320,5 +321,5 @@ persist.sys.usb.config=mass_storage,adb
 
 com.ti.omap_enhancement=true
 hwui.render_dirty_regions=false
-#ril.subscription.types=NV,RUIM
+ril.subscription.types=NV,RUIM
 #ro.ril.moto.newarch=true
