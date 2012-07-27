@@ -156,8 +156,10 @@ on post-fs
     chown system system /cache/fota
     chmod 0770 /cache/fota
     setprop wifi.interface "wlan0"
-    setprop softap.interface "wlan1"
+    setprop softap.interface "wlan0"
 # Load wifi drivers (all except wl12xx_sdio)
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
     insmod /system/lib/modules/compat.ko
     insmod /system/lib/modules/cfg80211.ko
     insmod /system/lib/modules/mac80211.ko
@@ -634,11 +636,11 @@ on property:ro.hdcp.support=2
 # ro.sys.atvc_allow_netmon_usb
 # ro.sys.atvc_allow_netmon_ih
 # ro.sys.atvc_allow_all_adb
-service atvc /system/bin/dbvc_atvc_property_set
-    class core
-    user system
-    group system mot_tpapi
-    oneshot
+#service atvc /system/bin/dbvc_atvc_property_set
+#    class core
+#    user system
+#    group system mot_tpapi
+#    oneshot
 service battd /system/bin/battd
     class core
     socket battdsock stream 0660 mot_accy mot_accy
@@ -685,9 +687,11 @@ on property:wlan.driver.status=ok
     start initial_regdom
 on property:init.svc.hostapd=running
     start initial_regdom
-service p2p_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc/wifi/p2p_supplicant.conf -dt
+service p2p_supplicant /system/bin/wpa_supplicant \
+    -iwlan0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -N \
+    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf
     class main
-    socket wpa_p2p_wlan0 dgram 660 wifi wifi
+    socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 service hciattach /system/bin/hciattach -l
@@ -779,7 +783,8 @@ service akmd8975 /system/bin/akmd8975
     class main
     user compass
     group compass misc input
-service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+service wpa_supplicant /system/bin/wpa_supplicant \
+    -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -e/data/misc/wifi/entropy.bin
     class main
 # we will start as root and wpa_supplicant will switch to user wifi
 # after setting up the capabilities required for WEXT
@@ -788,7 +793,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
-service dhcpcd_wlan0 /system/bin/dhcpcd
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
@@ -804,11 +809,11 @@ service iprenew_p2p /system/bin/dhcpcd -n
     class main
     disabled
     oneshot
-service dhcpcd_bnep0 /system/bin/dhcpcd
+service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
-service dhcpcd_usbeth0 /system/bin/dhcpcd
+service dhcpcd_usbeth0 /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
@@ -900,18 +905,6 @@ service mot_backup /system/bin/logwrapper /system/xbin/run_backup /system/etc/ba
     disabled
     user root
     oneshot
-service mot_restore /system/bin/logwrapper /system/xbin/run_restore /system/etc/backup_targets.csv
-    disabled
-    user root
-    oneshot
-on property:mot.backup_restore.action="run_backup"
-    setprop mot.backup_restore.status "Running"
-    stop zygote
-    start mot_backup
-on property:mot.backup_restore.action="run_restore"
-    setprop mot.backup_restore.status "Running"
-    stop zygote
-    start mot_restore
 service secclkd /system/bin/secclkd
     class main
     socket secclk_socket stream 660 mot_secclkd mot_secclkd

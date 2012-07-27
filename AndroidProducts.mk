@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_umts_spyder.mk
+    $(LOCAL_DIR)/full_umts_spyder.mk
