@@ -94,7 +94,7 @@ persist.ril.mux.retries = 500
 # Time in secs to sleep between retries
 persist.ril.mux.sleep = 2
 # QMI over SPI or USB
-persist.ril.qmi.overspi = no
+persist.ril.qmi.overspi = yes
 
 # does not support multiple call ring notifications
 ro.telephony.call_ring.multiple = false
@@ -195,7 +195,7 @@ ro.mot.eri=0
 # VZW Requirement Specifications: NETWORK BASED PLUS CODE DIALING
 # 0 disable
 # 1 enable
-ro.cdma.nbpcd=1
+ro.cdma.nbpcd=0
 # END IKSHADOW-702
 
 
@@ -275,7 +275,7 @@ ro.com.google.clientidbase.ms=android-motorola
 ro.com.google.clientidbase.am=android-motorola
 ro.com.google.clientidbase.gmm=android-motorola
 ro.com.google.clientidbase.yt=android-motorola
-persist.sys.usb.config=mtp
+persist.ril.features=0x182
 ro.config.notification_sound=OnTheHunt.ogg
 ro.config.alarm_alert=Alarm_Classic.ogg
 ro.com.google.gmsversion=4.0_r2
@@ -323,3 +323,5 @@ com.ti.omap_enhancement=true
 hwui.render_dirty_regions=false
 ril.subscription.types=NV,RUIM
 ro.ril.moto.newarch=true
+ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
+ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
