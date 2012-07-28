@@ -305,7 +305,7 @@ ro.media.panorama.defres=3264x1840
 ro.media.panorama.frameres=1280x720
 ro.mot.setuptype=2
 ro.mot.internalsdcard=1
-ro.setupwizard.mode=DISABLED
+#ro.setupwizard.mode=DISABLED
 dalvik.vm.dexopt-flags=m=y
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
@@ -316,7 +316,6 @@ ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/
 ro.build.version.full=ICS_Version.4.0.4_r2.1.XT910.Retail.en.EU
 ro.mot.hidden_keyboards=evfwd
 ro.com.google.locationfeatures=1
-ro.setupwizard.enable_bypass=1
 persist.sys.usb.config=mass_storage,adb
 
 com.ti.omap_enhancement=true
