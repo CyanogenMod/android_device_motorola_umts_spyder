@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     parse_hdmi_edid \
     libedid \
-    hwcomposer.spyder \
+    hwcomposer.umts_spyder \
     libinvensense_mpl \
     camera.omap4
 
