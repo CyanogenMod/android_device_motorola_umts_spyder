@@ -76,12 +76,13 @@ on fs
     mount ext3 /dev/block/mmcblk1p7 /pds nosuid nodev noatime nodiratime
     mount ext3 /dev/block/mmcblk1p24 /data nosuid nodev noatime nodiratime
     mount ext3 /dev/block/mmcblk1p21 /cache nosuid nodev noatime nodiratime
+    mount ext3 /dev/block/mmcblk1p22 /preinstall nosuid nodev noatime nodiratime
 
 on post-fs
     chown system system /pds
     chmod 0775 /pds
-#    chmod 0771 /preinstall
-#    chown system system /preinstall
+    chmod 0771 /preinstall
+    chown system system /preinstall
 
     mount ext3 /dev/block/mmcblk1p23 /system ro noatime nodiratime remount
     mount rootfs rootfs / rw remount
