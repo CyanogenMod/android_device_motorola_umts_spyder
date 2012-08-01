@@ -195,6 +195,11 @@ PRODUCT_COPY_FILES += \
     device/motorola/umts_spyder/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     device/motorola/umts_spyder/prebuilt/bin/50-backup.sh:system/addon.d/50-backup.sh
 
+# prebuilt hwc
+PRODUCT_COPY_FILES += \
+    device/motorola/umts_spyder/hwc/hwcomposer.spyder.so:system/vendor/lib/hw/hwcomposer.spyder.so \
+    device/motorola/umts_spyder/hwc/libedid.so:system/lib/libedid.so
+
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
