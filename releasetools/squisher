@@ -91,7 +91,7 @@ REALDATE=`date +%m-%d`
 if [ -f $ANDROID_BUILD_TOP/vendor/cm/LICENSE ];
 then
 MODVERSION=`sed -n -e'/ro\.cm\.version/s/^.*=//p' $REPACK/ota/system/build.prop`
-OUTFILE=$OUT/cm-$MODVERSION.zip
+OUTFILE=$OUT/KEXEC-cm-$MODVERSION.zip
 echo MODVERSION: $MODVERSION
 else
 OUTFILE=$OUT/$TARGET_PRODUCT-JB-$REALDATE.zip
