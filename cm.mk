@@ -25,7 +25,7 @@ MOTOROLA_SOFTWARE_VERSION := 6.76.226.3
 DEVELOPER_NAME := dhacker29
 DEVELOPER_HOST := rombot.droidhive.com
 DEVELOPMENT_STAGE := Alpha
-TARGET_BOOTANIMATION_NAME := vertical-540x960
+TARGET_BOOTANIMATION_NAME := vertical-540
 
 UTC_DATE := $(shell date +%s)
 DATE := $(shell date +%Y%m%d)
