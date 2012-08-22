@@ -325,3 +325,6 @@ ril.subscription.types=NV,RUIM
 ro.ril.moto.newarch=true
 ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
 ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
+persist.sys.root_access=3
+ro.hwc.legacy_api=true
+
