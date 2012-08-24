@@ -50,6 +50,7 @@ PRODUCT_PACKAGES += \
 
 # Modem
 PRODUCT_PACKAGES += \
+    nc \
     Stk \
     libaudiomodemgeneric \
     rild \
