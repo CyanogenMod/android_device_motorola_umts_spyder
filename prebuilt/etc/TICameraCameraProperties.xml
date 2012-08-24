@@ -22,7 +22,7 @@
 <prop-ev-compensation-min>-30</prop-ev-compensation-min>
 <prop-ev-compensation-step>0.1</prop-ev-compensation-step>
 <prop-exif-make>Unknown</prop-exif-make>
-<prop-exif-model>Full_spyder</prop-exif-model>
+<prop-exif-model>Full_umts_spyder</prop-exif-model>
 <prop-exposure-mode-default>auto</prop-exposure-mode-default>
 <prop-exposure-mode-values>manual,auto,night,backlighting,spotlight,sports,snow,beach,aperture,small-aperture</prop-exposure-mode-values>
 <prop-facing>back</prop-facing>
@@ -125,7 +125,7 @@
 <prop-ev-compensation-min>-30</prop-ev-compensation-min>
 <prop-ev-compensation-step>0.1</prop-ev-compensation-step>
 <prop-exif-make>Unknown</prop-exif-make>
-<prop-exif-model>Full_spyder</prop-exif-model>
+<prop-exif-model>Full_umts_spyder</prop-exif-model>
 <prop-exposure-mode-default>auto</prop-exposure-mode-default>
 <prop-exposure-mode-values>auto</prop-exposure-mode-values>
 <prop-facing>front</prop-facing>

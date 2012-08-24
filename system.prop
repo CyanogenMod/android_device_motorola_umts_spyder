@@ -314,11 +314,12 @@ ro.mot.dpmext=true
 ro.com.google.clientid=android-motorola
 ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
 ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
-ro.build.version.full=ICS_Version.4.0.4_r2.1.XT910.Retail.en.EU
+ro.build.version.full=JB_Version.4.1.1_r3.XT910.Retail.en.EU
 ro.mot.hidden_keyboards=evfwd
 ro.com.google.locationfeatures=1
 persist.sys.usb.config=mass_storage,adb
 
+# Additions
 com.ti.omap_enhancement=true
 hwui.render_dirty_regions=false
 ril.subscription.types=NV,RUIM

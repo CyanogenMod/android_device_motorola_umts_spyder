@@ -98,8 +98,8 @@ rm -rf $REPACK/ota/recovery
 # Strip modules
 [ -d $REPACK/ota/system/lib/modules ] && \
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
-if [ "$TARGET_PRODUCT" = "full_spyder" ]; then
-cp -f $ANDROID_BUILD_TOP/device/motorola/spyder/prebuilt/bin/su $REPACK/ota/system/xbin/su
+if [ "$TARGET_PRODUCT" = "full_umts_spyder" ]; then
+cp -f $ANDROID_BUILD_TOP/device/motorola/umts_spyder/prebuilt/bin/su $REPACK/ota/system/xbin/su
 fi
 
 # move gralloc to where it will be recognized
