@@ -33,6 +33,7 @@ PRODUCT_PACKAGES += \
     camera.omap4 \
     libinvensense_mpl \
     hwcomposer.umts_spyder \
+    libedid \
 
 PRODUCT_PACKAGES += \
     libaudioutils \
@@ -157,7 +158,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    $(call add-to-product-copy-files-if-exists,packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml)
 
 # Prebuilts
 PRODUCT_COPY_FILES += \
@@ -166,9 +166,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/prebuilt/bin/strace:system/bin/strace \
     $(DEVICE_FOLDER)/prebuilt/etc/firmware/ducati-m3.bin:system/etc/firmware/ducati-m3.bin \
     $(DEVICE_FOLDER)/prebuilt/etc/gps.conf:system/etc/gps.conf \
-    $(DEVICE_FOLDER)/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
     $(DEVICE_FOLDER)/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(DEVICE_FOLDER)/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(DEVICE_FOLDER)/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
+    $(DEVICE_FOLDER)/prebuilt/etc/TICameraCameraProperties.xml:system/etc/TICameraCameraProperties.xml \
 
 #    $(DEVICE_FOLDER)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
 
@@ -184,7 +185,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # still need to set english for audio init
 PRODUCT_LOCALES += en_US
-
 
 # stuff specific to ti OMAP4 hardware
 $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
