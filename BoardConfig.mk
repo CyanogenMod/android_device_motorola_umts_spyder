@@ -36,7 +36,7 @@ BOARD_PAGE_SIZE := 0x4096
 
 # Kernel Build
 TARGET_KERNEL_SOURCE := kernel/motorola/mapphone
-TARGET_KERNEL_CONFIG := umts_spyder_defconfig
+TARGET_KERNEL_CONFIG := mapphone_umts_spyder_defconfig
 
 WLAN_MODULES:
 	make clean -C hardware/ti/wlan/mac80211/compat_wl12xx
