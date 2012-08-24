@@ -609,18 +609,10 @@ on property:tcmd.suspend=3
     start surfaceflinger
     start media
     start zygote
-service tund /system/bin/tund
-    class core
-    socket tund stream 0660 vpn system
-    ioprio be 2
 service nexus /system/bin/nexus
     class core
     socket nexus stream 0660 root system
     disabled
-# Copy 12M/batch files
-service 12m_files_copy /system/etc/12m_files_copy.sh
-    class core
-    oneshot
 service dnsmasq /system/bin/logwrapper /system/bin/dnsmasq -C/data/misc/wifi/dns.conf -k
     class main
     group wifi
