@@ -328,4 +328,4 @@ ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0
 ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
 persist.sys.root_access=3
 ro.hwc.legacy_api=true
-
+ro.product.use_charge_counter=1
