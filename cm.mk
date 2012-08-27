@@ -25,7 +25,10 @@ MOTOROLA_SOFTWARE_VERSION := 6.76.226.3
 DEVELOPER_NAME := dhacker29
 DEVELOPER_HOST := dhacker29
 DEVELOPMENT_STAGE := Alpha
-TARGET_BOOTANIMATION_NAME := vertical-540
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 960
+TARGET_SCREEN_WIDTH := 540
 
 UTC_DATE := $(shell date +%s)
 DATE := $(shell date +%Y%m%d)
