@@ -36,8 +36,8 @@ PRODUCT_COPY_FILES += \
 # Kexec files
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/kexec/devtree:system/etc/kexec/devtree \
-    out/target/product/umts_spyder/ramdisk.img:system/etc/kexec/ramdisk.img \
-    $(DEVICE_FOLDER)/kernel:system/etc/kexec/kernel
+    $(DEVICE_FOLDER)/kernel:system/etc/kexec/kernel \
+    out/target/product/umts_spyder/ramdisk.img:system/etc/kexec/ramdisk.img
 
 # Prebuilts
 PRODUCT_COPY_FILES += \
@@ -48,9 +48,9 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(DEVICE_FOLDER)/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(DEVICE_FOLDER)/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
-    $(DEVICE_FOLDER)/prebuilt/etc/TICameraCameraProperties.xml:system/etc/TICameraCameraProperties.xml \
+    $(DEVICE_FOLDER)/prebuilt/etc/TICameraCameraProperties.xml:system/etc/TICameraCameraProperties.xml
 
-#    $(DEVICE_FOLDER)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
+#    $(DEVICE_FOLDER)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml 
 
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor.mk)
