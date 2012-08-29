@@ -36,7 +36,7 @@ PRODUCT_COPY_FILES += \
 # Kexec files
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/kexec/devtree:system/etc/kexec/devtree \
-    $(DEVICE_FOLDER)/kernel:system/etc/kexec/kernel \
+    out/target/product/umts_spyder/kernel:system/etc/kexec/kernel \
     out/target/product/umts_spyder/ramdisk.img:system/etc/kexec/ramdisk.img
 
 # Prebuilts
