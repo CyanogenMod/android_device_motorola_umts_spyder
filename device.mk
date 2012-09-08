@@ -52,6 +52,11 @@ PRODUCT_COPY_FILES += \
 
 #    $(DEVICE_FOLDER)/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml 
 
+# SU binary for AOSP builds
+ifeq ($(TARGET_PRODUCT),full_umts_spyder)
+PRODUCT_COPY_FILES += vendor/motorola/common/prebuilt/bin/su:system/xbin/su
+endif
+
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor.mk)
 
