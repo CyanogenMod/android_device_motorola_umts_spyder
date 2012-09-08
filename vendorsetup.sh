@@ -22,3 +22,4 @@
 
 add_lunch_combo full_umts_spyder-userdebug
 add_lunch_combo cm_umts_spyder-userdebug
+add_lunch_combo aokp_umts_spyder-userdebug
