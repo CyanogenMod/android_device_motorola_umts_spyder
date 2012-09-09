@@ -23,7 +23,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Stk
 
-# Rootfs files
+# Root files
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/root/default.prop:/root/default.prop \
     $(DEVICE_FOLDER)/root/init.rc:/root/init.rc \
@@ -33,17 +33,30 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/root/ueventd.mapphone_cdma.rc:/root/ueventd.mapphone_cdma.rc \
     $(DEVICE_FOLDER)/root/ueventd.mapphone_umts.rc:/root/ueventd.mapphone_umts.rc
 
-# Kexec files
+# Kexec files and ti ducati or rootfs files
+ifeq ($(BOARD_USES_KEXEC),true)
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/kexec/devtree:system/etc/kexec/devtree \
-    out/target/product/umts_spyder/kernel:system/etc/kexec/kernel \
-    out/target/product/umts_spyder/ramdisk.img:system/etc/kexec/ramdisk.img
+    $(DEVICE_FOLDER)/prebuilt/etc/firmware/ducati-m3.bin:system/etc/firmware/ducati-m3.bin \
+    out/target/product/umts_spyder/ramdisk.img:system/etc/kexec/ramdisk.img \
+    out/target/product/umts_spyder/kernel:system/etc/kexec/kernel
+else
+PRODUCT_COPY_FILES += \
+    $(DEVICE_FOLDER)/root/default.prop:/system/etc/rootfs/default.prop \
+    $(DEVICE_FOLDER)/root/init.rc:/root/init.rc \
+    $(DEVICE_FOLDER)/root/init.mapphone_cdma.rc:/system/etc/rootfs/init.mapphone_cdma.rc \
+    $(DEVICE_FOLDER)/root/init.mapphone_umts.rc:/system/etc/rootfs/init.mapphone_umts.rc \
+    $(DEVICE_FOLDER)/root/ueventd.rc:/system/etc/rootfs/ueventd.rc \
+    $(DEVICE_FOLDER)/root/ueventd.mapphone_cdma.rc:/system/etc/rootfs/ueventd.mapphone_cdma.rc \
+    $(DEVICE_FOLDER)/root/ueventd.mapphone_umts.rc:/system/etc/rootfs/ueventd.mapphone_umts.rc \
+    out/target/product/umts_spyder/root/init:system/etc/rootfs/init \
+    out/target/product/umts_spyder/root/sbin/adbd:system/etc/rootfs/sbin/adbd
+endif
 
 # Prebuilts
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/prebuilt/bin/battd:system/bin/battd \
     $(DEVICE_FOLDER)/prebuilt/bin/mount_ext3.sh:system/bin/mount_ext3.sh \
-    $(DEVICE_FOLDER)/prebuilt/etc/firmware/ducati-m3.bin:system/etc/firmware/ducati-m3.bin \
     $(DEVICE_FOLDER)/prebuilt/etc/gps.conf:system/etc/gps.conf \
     $(DEVICE_FOLDER)/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(DEVICE_FOLDER)/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
@@ -57,6 +70,18 @@ ifeq ($(TARGET_PRODUCT),full_umts_spyder)
 PRODUCT_COPY_FILES += vendor/motorola/common/prebuilt/bin/su:system/xbin/su
 endif
 
+# copy all kernel modules under the "modules" directory to system/lib/modules
+ifneq ($(BOARD_USES_KEXEC),true)
+PRODUCT_COPY_FILES += $(shell \
+    find device/motorola/umts_spyder/modules -name '*.ko' \
+    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
+    | tr '\n' ' ')
+endif
+
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor.mk)
-
+ifneq ($(BOARD_USES_KEXEC),true)
+$(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor-pvr.mk)
+$(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor-stock-camera.mk)
+$(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor-stock-ducati.mk)
+endif
