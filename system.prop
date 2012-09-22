@@ -314,7 +314,6 @@ ro.mot.dpmext=true
 ro.com.google.clientid=android-motorola
 ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
 ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
-ro.build.version.full=JB_Version.4.1.1_r3.XT910.Retail.en.EU
 ro.mot.hidden_keyboards=evfwd
 ro.com.google.locationfeatures=1
 persist.sys.usb.config=mass_storage,adb
@@ -322,8 +321,6 @@ persist.sys.usb.config=mass_storage,adb
 # Additions
 com.ti.omap_enhancement=true
 hwui.render_dirty_regions=false
-ril.subscription.types=NV,RUIM
-ro.ril.moto.newarch=true
 ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
 ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
 persist.sys.root_access=3
