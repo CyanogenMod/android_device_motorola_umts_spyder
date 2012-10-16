@@ -325,7 +325,7 @@ ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,800
 persist.sys.root_access=3
 ro.hwc.legacy_api=true
 ro.product.use_charge_counter=1
-persist.sys.gsm_signalstrength_fix=true
+persist.sys.gsm_signalstrength=true
 persist.sys.moto_oem_telephony=true
 persist.sys.moto_imsi_fix=true
 ro.config.not_world_phone=true
