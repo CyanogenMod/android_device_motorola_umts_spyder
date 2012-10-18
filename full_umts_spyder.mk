@@ -31,6 +31,8 @@ PRODUCT_COPY_FILES += \
     device/motorola/umts_spyder/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 endif
 
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=umts_spyder
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # This is where we'd set a backup provider if we had one
@@ -43,4 +45,5 @@ $(call inherit-product, device/motorola/umts_spyder/device.mk)
 PRODUCT_NAME := full_umts_spyder
 PRODUCT_DEVICE := umts_spyder
 PRODUCT_BRAND := MOTO
+PRODUCT_MANUFACTURER := MOTO
 PRODUCT_MODEL := MOTOROLA RAZR
