@@ -326,4 +326,4 @@ persist.sys.root_access=3
 ro.hwc.legacy_api=true
 ro.product.use_charge_counter=1
 debug.sf.no_hw_vsync=1
-ro.telephony.ril.v3=writeaidonly
+ro.telephony.ril.v3=writeaidonly,signalstrength
