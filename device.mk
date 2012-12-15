@@ -26,11 +26,11 @@ PRODUCT_PACKAGES += \
 # Root files
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/root/default.prop:/root/default.prop \
-    $(DEVICE_FOLDER)/root/init.mapphone_cdma.rc:/root/init.mapphone_cdma.rc \
-    $(DEVICE_FOLDER)/root/init.mapphone_umts.rc:/root/init.mapphone_umts.rc \
-    $(DEVICE_FOLDER)/root/ueventd.rc:/root/ueventd.rc \
-    $(DEVICE_FOLDER)/root/ueventd.mapphone_cdma.rc:/root/ueventd.mapphone_cdma.rc \
-    $(DEVICE_FOLDER)/root/ueventd.mapphone_umts.rc:/root/ueventd.mapphone_umts.rc
+    $(DEVICE_FOLDER)/root/init.mapphone.rc:/root/init.mapphone_cdma.rc \
+    $(DEVICE_FOLDER)/root/init.mapphone.rc:/root/init.mapphone_umts.rc \
+    $(DEVICE_FOLDER)/root/ueventd.mapphone.rc:/root/ueventd.mapphone_cdma.rc \
+    $(DEVICE_FOLDER)/root/ueventd.mapphone.rc:/root/ueventd.mapphone_umts.rc \
+    $(DEVICE_FOLDER)/root/init.usb.rc:/root/init.usb.rc \
 
 # Kexec files and ti ducati or rootfs files
 ifeq ($(BOARD_USES_KEXEC),true)
@@ -51,11 +51,12 @@ endif
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/root/default.prop:/system/etc/rootfs/default.prop \
     system/core/rootdir/init.rc:/system/etc/rootfs/init.rc \
-    $(DEVICE_FOLDER)/root/init.mapphone_cdma.rc:/system/etc/rootfs/init.mapphone_cdma.rc \
-    $(DEVICE_FOLDER)/root/init.mapphone_umts.rc:/system/etc/rootfs/init.mapphone_umts.rc \
-    $(DEVICE_FOLDER)/root/ueventd.rc:/system/etc/rootfs/ueventd.rc \
-    $(DEVICE_FOLDER)/root/ueventd.mapphone_cdma.rc:/system/etc/rootfs/ueventd.mapphone_cdma.rc \
-    $(DEVICE_FOLDER)/root/ueventd.mapphone_umts.rc:/system/etc/rootfs/ueventd.mapphone_umts.rc \
+    system/core/rootdir/ueventd.rc:/system/etc/rootfs/ueventd.rc \
+    $(DEVICE_FOLDER)/root/init.usb.rc:/system/etc/rootfs/init.usb.rc \
+    $(DEVICE_FOLDER)/root/init.mapphone.rc:/system/etc/rootfs/init.mapphone_cdma.rc \
+    $(DEVICE_FOLDER)/root/init.mapphone.rc:/system/etc/rootfs/init.mapphone_umts.rc \
+    $(DEVICE_FOLDER)/root/ueventd.mapphone.rc:/system/etc/rootfs/ueventd.mapphone_cdma.rc \
+    $(DEVICE_FOLDER)/root/ueventd.mapphone.rc:/system/etc/rootfs/ueventd.mapphone_umts.rc \
     $(OUT)/root/sbin/adbd:system/etc/rootfs/sbin/adbd
 endif
 
