@@ -5,3 +5,6 @@ endif
 ifeq ($(TARGET_PRODUCT),cna_umts_spyder)
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/cna.mk
 endif
+ifeq ($(TARGET_PRODUCT),killrom_umts_spyder)
+    PRODUCT_MAKEFILES += $(LOCAL_DIR)/killrom.mk
+endif
