@@ -17,7 +17,8 @@ PRODUCT_COPY_FILES += \
 
 # Hardware HALs
 PRODUCT_PACKAGES += \
-    hwcomposer.umts_spyder
+    hwcomposer.umts_spyder \
+    camera.umts_spyder
 
 # Modem
 PRODUCT_PACKAGES += \
