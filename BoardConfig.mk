@@ -25,5 +25,11 @@ TARGET_KERNEL_SOURCE := kernel/motorola/omap4_xt912
 TARGET_KERNEL_CONFIG := mapphone_defconfig
 endif
 
-# Recovery
-BOARD_NONSAFE_SYSTEM_DEVICE := /dev/block/mmcblk1p20
+# gps
+BOARD_VENDOR_TI_GPS_HARDWARE := omap4
+BOARD_GPS_LIBRARIES := libgps
+
+# adb has root
+ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
+ADDITIONAL_DEFAULT_PROPERTIES += ro.allow.mock.location=1
+

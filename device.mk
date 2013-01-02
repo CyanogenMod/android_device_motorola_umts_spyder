@@ -1,11 +1,22 @@
 #
 # This is the product configuration for a full umts_spyder
 #
+$(call inherit-product, device/motorola/common/common.mk)
 
 DEVICE_FOLDER := device/motorola/umts_spyder
 
 # Device overlay
     DEVICE_PACKAGE_OVERLAYS += $(DEVICE_FOLDER)/overlay/aosp
+
+
+# Hardware HALs
+PRODUCT_PACKAGES += \
+    camera.umts_spyder
+
+ifeq ($(BOARD_USES_KEXEC),true)
+PRODUCT_PACKAGES += \
+    hwcomposer.umts_spyder
+endif
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -15,10 +26,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/audio/libasound.so:/system/lib/libasound.so \
     $(DEVICE_FOLDER)/audio/libaudio_ext.so:/system/lib/libaudio_ext.so
 
-# Hardware HALs
-PRODUCT_PACKAGES += \
-    hwcomposer.umts_spyder \
-    camera.umts_spyder
 
 # Modem
 PRODUCT_PACKAGES += \
@@ -80,7 +87,6 @@ PRODUCT_COPY_FILES += $(shell \
     | tr '\n' ' ')
 endif
 
-$(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor.mk)
 ifneq ($(BOARD_USES_KEXEC),true)
 $(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor-pvr.mk)
