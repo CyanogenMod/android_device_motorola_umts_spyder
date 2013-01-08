@@ -8,7 +8,7 @@ $(call inherit-product-if-exists, vendor/google/killrom/config/common.mk)
 # Inherit some common stuff.
 $(call inherit-product, vendor/nos/killrom/config/gsm.mk)
 
-#DEVICE_PACKAGE_OVERLAYS += device/motorola/umts_spyder/overlay/killrom
+DEVICE_PACKAGE_OVERLAYS += device/motorola/umts_spyder/overlay/killrom
 
 #
 # Setup device specific product configuration.
