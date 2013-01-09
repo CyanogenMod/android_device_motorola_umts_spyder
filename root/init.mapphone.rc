@@ -10,6 +10,8 @@ on init
     symlink /storage/sdcard1 /mnt/sdcard-ext
     symlink /storage/sdcard0 /mnt/sdcard
 
+    mkdir /pds 0775 system system
+
 # Permissions for RIL. Need to be set before boot.
     chmod 0660 /sys/bus/usb/devices/usb1/power/control
     chmod 0660 /sys/bus/usb/devices/usb2/power/control
@@ -22,15 +24,12 @@ on fs
     mount rootfs rootfs / rw remount
     mkdir /ss 0777 root root
     mount vfat /dev/block/emstorage /ss
-    exec /sbin/bbx ls -l /dev/block/ * > /ss/block-dir.tx
 # end SS3 setup
-    mkdir /pds 0775 system system
 
     mount ext3 loop@/ss/safestrap/rom-slot1/system.img /system wait noatime nodiratime barrier=1
     mount ext3 loop@/ss/safestrap/rom-slot1/userdata.img /data nosuid nodev noatime nodiratime
     mount ext3 loop@/ss/safestrap/rom-slot1/cache.img /cache nosuid nodev noatime nodiratime
     mount ext3 /dev/block/pds /pds nosuid nodev noatime nodiratime
-
 on post-fs
     mount rootfs rootfs / rw remount
     symlink /dev/ttyGS0 /dev/acm0
@@ -176,9 +175,8 @@ service msp430 /system/bin/msp430 boot
     oneshot
 service uim /system/bin/uim-sysfs
     class core
-    user root
+    user bluetooth
     group bluetooth net_bt_admin
-    oneshot
 service dnsmasq /system/bin/dnsmasq -C/data/misc/wifi/dns.conf -k
     class main
     group wifi
