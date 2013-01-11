@@ -9,6 +9,10 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/umts_spyder/overlay/cm
 
+# CM-specific init file for SafeStrap
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/etc/init.local.rc:system/etc/rootfs/init.cm.rc
+
 #
 # Setup device specific product configuration.
 #
