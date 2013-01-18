@@ -11,7 +11,8 @@ DEVICE_FOLDER := device/motorola/umts_spyder
 
 # Hardware HALs
 PRODUCT_PACKAGES += \
-    camera.umts_spyder
+    camera.umts_spyder \
+    lights.umts_spyder
 
 ifeq ($(BOARD_USES_KEXEC),true)
 PRODUCT_PACKAGES += \
