@@ -22,10 +22,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(DEVICE_FOLDER)/audio/alsa.omap4.so:/system/lib/hw/alsa.omap4.so \
     $(DEVICE_FOLDER)/audio/audio.primary.omap4.so:/system/lib/hw/audio.primary.umts_spyder.so \
-    $(DEVICE_FOLDER)/audio/audio_policy.omap4.so:/system/lib/hw/audio_policy.omap4.so \
     $(DEVICE_FOLDER)/audio/libaudio_ext.so:/system/lib/libaudio_ext.so
 
 PRODUCT_PACKAGES += \
+    audio_policy.umts_spyder \
     libasound
 
 # Modem
