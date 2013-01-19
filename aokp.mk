@@ -9,6 +9,10 @@ $(call inherit-product, vendor/aokp/configs/gsm.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/umts_spyder/overlay/aokp
 
+# AOKP-specific init file for SafeStrap
+PRODUCT_COPY_FILES += \
+    vendor/aokp/prebuilt/common/etc/init.local.rc:system/etc/rootfs/init.aokp.rc
+
 # Setup device specific product configuration.
 PRODUCT_NAME := aokp_umts_spyder
 PRODUCT_BRAND := moto
