@@ -25,10 +25,10 @@ DEVICE_FOLDER := device/motorola/umts_spyder
 
 # Hardware HALs
 PRODUCT_PACKAGES += \
+    power.umts_spyder \
     camera.umts_spyder \
-    lights.umts_spyder
-
-#    hwcomposer.umts_spyder
+    lights.umts_spyder \
+    hwcomposer.umts_spyder
 
 # Modem
 PRODUCT_PACKAGES += \
@@ -48,3 +48,4 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/motorola/umts_spyder/umts_spyder-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/omap4-common/common-vendor-pvr.mk)
