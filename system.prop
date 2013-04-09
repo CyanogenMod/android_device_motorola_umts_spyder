@@ -204,3 +204,7 @@ ro.com.google.locationfeatures=1
 ro.gsm.2nd_data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
 ro.gsm.data_retry_config=max_retries=infinite,default_randomization=2000,0,0,80000,125000,485000,905000
 ro.telephony.ril.v3=writeaidonly,signalstrength
+
+# Vold switchability uncomment second line to swap
+ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
+#persist.sys.vold.switchexternal=1
