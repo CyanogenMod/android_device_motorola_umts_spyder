@@ -1,18 +1,17 @@
-# system/bin (from umts_spyder ICS 672.180.41 OTA)
+# system/bin (from umts_spyder JB 982.124.14 OTA)
 bin/akmd8975
 bin/msp430
 
-# system/etc (from umts_spyder ICS 672.180.41 OTA)
+# system/etc (from umts_spyder JB 982.124.14 OTA)
 etc/mspfirmware/mspfirmware.bin
 etc/mspfirmware/version.txt
 etc/firmware/ducati-m3.bin
 etc/firmware/TIInit_10.6.15.bts
 
-# system/usr (from umts_spyder ICS 672.180.41 OTA)
+# system/usr (from umts_spyder JB 982.124.14 OTA)
 usr/keylayout/cy8c201xx.kl
 
-# RIL files (from umts_spyder ICS 672.180.41 OTA)
-bin/wrigley-diag.sh
+# RIL files (from umts_spyder JB 982.124.14 OTA)
 lib/libbabysit.so
 lib/libmotdb.so
 lib/lib-mot-lte-ril.so
@@ -24,10 +23,10 @@ lib/librds_util.so
 lib/libril_rds.so
 lib/moto-ril-multimode.so
 
-# system/lib (need to rename to *.umts_spyder.so) (from umts_spyder ICS 672.180.41 OTA)
+# system/lib (need to rename to *.umts_spyder.so) (from umts_spyder JB 982.124.14 OTA)
 lib/hw/sensorhub.spyder.so
 lib/hw/sensors.spyder.so
 lib/libsensorhub_jni.so
 
-# system/etc/omapcam/module2 (from umts_spyder ICS 672.180.41 OTA)
+# system/etc/omapcam/module2 (from umts_spyder JB 982.124.14 OTA)
 etc/omapcam/module2/cid1044_mt9m114_sensor_config_dcc.bin
