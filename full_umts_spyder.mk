@@ -36,5 +36,5 @@ $(call inherit-product, device/motorola/umts_spyder/device.mk)
 PRODUCT_NAME := full_umts_spyder
 PRODUCT_DEVICE := umts_spyder
 PRODUCT_BRAND := MOTO
-PRODUCT_MANUFACTURER := MOTO
+PRODUCT_MANUFACTURER := Motorola
 PRODUCT_MODEL := MOTOROLA RAZR
