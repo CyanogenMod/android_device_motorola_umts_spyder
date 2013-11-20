@@ -24,5 +24,10 @@
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface">rmnet0</string>
 
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">XT910</string>
+
+    <!-- MMS user agent prolfile url -->
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.motorola.com/phoneconfig/motoxt910/Profile/motoxt910.rdf</string>
 </resources>
 
