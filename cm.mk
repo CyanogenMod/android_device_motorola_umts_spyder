@@ -15,10 +15,6 @@ PRODUCT_MANUFACTURER := Motorola
 PRODUCT_RELEASE_NAME := MOTOROLA RAZR
 PRODUCT_SFX := umts
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 960
-TARGET_SCREEN_WIDTH := 540
-
 UTC_DATE := $(shell date +%s)
 DATE := $(shell date +%Y%m%d)
 
