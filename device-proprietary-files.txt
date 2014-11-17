@@ -6,9 +6,6 @@ bin/msp430
 etc/mspfirmware/mspfirmware.bin
 etc/mspfirmware/version.txt
 
-# system/usr
-usr/keylayout/cy8c201xx.kl
-
 # RIL files
 lib/libbabysit.so
 lib/libmotdb.so
