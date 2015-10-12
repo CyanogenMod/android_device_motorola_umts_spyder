@@ -89,7 +89,7 @@ ro.mot.phonemode.vzwglobalphone=0
 # This is part of the VZW World-phone Feature. SMS are always sent to a US SMSC and then injected
 # into that network. This allows for billing and give the user the impression that the device is
 # still in the US.
-ro.telephony.gsm-routes-us-smsc = 0
+ro.telephony.gsm-routes-us-smsc=0
 # END Motorola, xwg843, 29-Jul-2011, IKSTABLE6-3962
 # END  Motorola, qmfd78, 14-Jul-2010, IKMAIN-884
 
