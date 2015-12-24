@@ -19,7 +19,7 @@ lib/libril_rds.so
 lib/moto-ril-multimode.so
 
 # system/lib
-lib/hw/gps.spyder.so:lib/hw/gps.umts_spyder.so
+lib/hw/gps.vendor.so:lib/hw/gps.vendor.so
 lib/hw/sensorhub.spyder.so:lib/hw/sensorhub.umts_spyder.so
 lib/hw/sensors.spyder.so:lib/hw/sensors.umts_spyder.so
 lib/libsensorhub_jni.so
